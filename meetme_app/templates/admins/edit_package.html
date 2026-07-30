@@ -1,0 +1,84 @@
+{% extends "admins/base.html" %}
+{% block content %}
+
+<div class="package-container">
+    <h2>Edit Package</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+
+        <div class="photo-section">
+            <div class="current-photo">
+
+                {% if celebrity.photo %}
+                    <img id="photo-preview" src="{{ package.photo.url }}" alt="pakage photo" width="80">
+                {% endif %}
+                    <p>Current photo</p>
+            </div>
+
+            <div class="change-photo">
+                <label>Change photo</label>
+                <input type="file" 
+                       name="photo"
+                       id="photo"
+                       accept="image/*"
+                       onchange="previewPhoto(event)">
+            </div>
+        </div>
+    
+        <div class="add-package-grid">
+            <div class="package-form-group">
+
+                    {% csrf_token %}
+
+                    <p>Celebrity</p>
+                    <select name="celebrity">
+
+                        {% for celebrity in celebrities %}
+                            <option value="{{ celebrity.id }}" 
+                            {% if celebrity.id == package.celebrity.id %}
+                                selected
+                            {% endif %}
+                            >
+                                {{ celebrity.name }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                    <br>
+                </div>
+
+                <div class="package-form-group">
+                    <p>Package Name</p>
+                    <input type="text" name="package_name" value="{{ package.package_name}}">
+                    <br>
+                </div>
+
+                <div class="package-form-group">
+                    <p>Price</p>
+                    <input type="number" name="price" value="{{ package.price}}">
+                    <br>
+                </div>
+
+                <div class="package-form-group">
+                    <p>Benefits</p>
+                    <textarea name="benefits">{{ package.benefits }}</textarea>
+                    <br>
+                </div>
+            </div>
+
+            <button type="submit" class="package-update-button">Update</button>
+
+    </form>
+</div>
+
+<script>
+    function previewPhoto(event) {
+        const file = event.target.files[0];
+
+        if (file) {
+            const preview = document.getElementById("photo-preview");
+
+            preview.src = URL.createObjectURL(file);
+        }
+    }
+</script>
+{% endblock %}

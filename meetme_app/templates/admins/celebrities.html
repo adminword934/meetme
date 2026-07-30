@@ -1,0 +1,50 @@
+{% extends "admins/base.html" %}
+{% block content %}
+<div class="page-header">
+    <h2>Celebrity Events</h2>
+    <hr>
+    <a href="{% url 'add_celebrity' %}">
+        <button class="add-button">+ Add Celebrity</button>
+    </a>
+</div>
+
+<div class="table-container">
+
+    <table class="admin-table">
+        <tr>
+            <th>Photo</th>
+            <th>Name</th>
+            <th>Free Text</th>
+            <th>Venue</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Actions</th>
+            <th></th>
+        </tr>
+        {% for celebrity in celebrities %}
+        <tr>
+            <td>
+                {% if celebrity.photo %}
+                    <img src="{{ celebrity.photo.url }}" class="image">
+                {% endif %}
+            </td>
+            <td>{{ celebrity.name }}</td>
+            <td>{{ celebrity.free_text|linebreaksbr }}</td>
+            <td>{{ celebrity.venue }}</td>
+            <td>{{ celebrity.date }}</td>
+            <td>{{ celebrity.time }}</td>
+            <td>
+                <a href="{% url 'edit_celebrity' celebrity.id %}">
+                    <button class="edit-button">Edit</button>
+                </a>
+            </td>
+            <td>
+                <a href="{% url 'delete_celebrity' celebrity.id %}">
+                    <button class="delete-button">Delete</button>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

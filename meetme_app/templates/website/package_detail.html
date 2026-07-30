@@ -1,0 +1,193 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+
+    <title>Package details</title>
+</head>
+<body class="package-body">
+    <section class="package-detail">
+        {% if celebrity.photo %}
+            <img
+                src="{{ package.photo.url }}"
+                alt="{{ package.name }}"
+                class="package-photo"
+            >
+            {% endif %}
+    </section>
+
+    <section class="package-detail-grid">
+        <div class="s-package-detail-card">
+            <h3>Silver VIP</h3>
+            {% if package.price %}
+                <p class="price"> ${{ package.price }} </p>
+            {% endif %}
+            <p class="exp">What your experience include</p>
+            <ul>
+                <li>
+                    <i class="fa-solid fa-door-open"></i>
+                    Early venue Access
+                </li>
+                
+                <li>
+                    <i class="fa-solid fa-chair"></i>
+                    Premium reserved seat
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-id-badge" ></i>
+                    Exclusive VIP laminate and lanyard
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-gift"></i>
+                    Limited-edition {{ celebrity.name }} merchandise
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="g-package-detail-card">
+            <h3>Gold VIP</h3>
+            <p class="price">$1199.00</p>
+            <p class="exp">What your experience include</p>
+            <ul>
+                <li>
+                    <i class="fa-solid fa-crown"></i>
+                    Excellent reserved seating
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-door-open"></i>
+                    Early venue entry
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-box-open"></i>
+                    Exclusive merchandise package
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-scroll"></i>
+                    Commemorative {{ celebrity.name }} poster
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-store"></i>
+                    Priority merchandise shopping
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="p-package-detail-card">
+            <h3>Platinum VIP</h3>
+            <p class="price">$1799.00</p>
+            <p class="exp">What your experience include</p>
+            <ul>
+                <li>
+                    <i class="fa-solid fa-star"></i>
+                    Premium seating near {{ celebrity.name }}
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-camera"></i>
+                    Professional photo opportunity
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-pen-fancy"></i>
+                    Signed {{ celebrity.name }} memorabilia
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-gift"></i>
+                    Exclusive VIP gift package
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-bolt"></i>
+                    Fast-track venue entry
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="u-package-detail-card">
+            <h3>Ultimate {{ celebrity.name }} VIP</h3>
+            <p class="price">$2500.00</p>
+            <p class="exp">What your experience include</p>
+            <ul>
+                <li>
+                    <i class="fa-solid fa-handshake"></i>
+                    Meet {{ celebrity.name }} before others
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-camera-retro"></i>
+                    Different professional photos with {{ celebrity.name }}
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-medal"></i>
+                    Front row reserved seating
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-signature"></i>
+                    Signed exclusive merchandise
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-gift"></i>
+                    Premium VIP gift package
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-bolt"></i>
+                    Priority venue entry
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-user-tie"></i>
+                    Dedicated VIP host
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="support">
+        <p>Get more info on bookings.</p>
+        <p>Contact <a href="{{ settings.support_link }}">
+            {{ settings.support_text }}
+        </a></p>
+    </section>
+
+    <footer>
+        <div class="socials">
+            <p>FOLLOW</p>
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+        </div>
+
+        <div>
+            <p>Terms & Policies</p>
+        </div>
+
+        <div>
+            <p>&copy; Meet Me. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

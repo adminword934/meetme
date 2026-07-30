@@ -1,0 +1,22 @@
+{% extends "admins/base.html" %}
+
+{% block content %}
+
+<form method="POST">
+    {% csrf_token %}
+
+    <label class="link-label">Support Text</label>
+    <input class="link-input" type="text" 
+           name="support_text"
+           value="{{ settings.support_text }}">
+           <br><br>
+
+    <label class="link-label">Support Link</label>
+    <input class="link-input" type="text"
+           name="support_link"
+           value="{{ settings.support_link }}">
+           <br><br>
+
+    <button class="link-button" type="submit">Update</button>
+</form>
+{% endblock %}

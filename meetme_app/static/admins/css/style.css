@@ -1,0 +1,881 @@
+/* admin login page */
+.admin-body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#fff;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    box-sizing:border-box;
+}
+
+.container{
+    width:100%;
+    max-width:550px;
+    background:#fff;
+    border:1px solid #d5d5d5;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.top{
+    background:#111827;
+    color:#fff;
+    text-align:center;
+    padding:18px;
+    font-size:28px;
+    font-weight:700;
+}
+
+.content{
+    padding:30px;
+}
+
+.form{
+    display:flex;
+    flex-direction:column;
+}
+
+.admin-label{
+    font-size:18px;
+    font-weight:600;
+    margin-bottom:8px;
+}
+
+.admin-input{
+    width:100%;
+    height:45px;
+    padding:0 12px;
+    font-size:16px;
+    border:1px solid #d5d5d5;
+    border-radius:8px;
+    box-sizing:border-box;
+}
+
+.admin-input:focus{
+    outline:none;
+    border-color:#2563eb;
+}
+
+.btn{
+    margin-top:20px;
+    display:flex;
+    justify-content:center;
+}
+
+.admin-button{
+    background:#2563eb;
+    color:#fff;
+    border:none;
+    border-radius:8px;
+    padding:14px 30px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.errors{
+    color:#dc2626;
+    margin-top:10px;
+    text-align:center;
+}
+
+@media (max-width:768px){
+
+    .admin-body{
+        padding:15px;
+    }
+
+    .container{
+        width:100%;
+        max-width:100%;
+    }
+
+    .top{
+        font-size:24px;
+        padding:16px;
+    }
+
+    .content{
+        padding:20px;
+    }
+
+    .admin-label{
+        font-size:17px;
+    }
+
+    .admin-input{
+        width:100%;
+        height:46px;
+        font-size:16px;
+    }
+
+    .admin-button{
+        width:100%;
+        padding:14px;
+        font-size:16px;
+    }
+}
+
+
+
+
+
+
+
+/* change password */
+h2{
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+form{
+    max-width: 650px;
+}
+
+form p{
+    margin-bottom: 18px;
+}
+
+form label{
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+form input{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d5d5d5;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+form input:focus{
+    outline: none;
+    border-color: #2563eb;
+}
+
+form ul{
+    margin: 12px 0 20px;
+    padding-left: 20px;
+    color: #666;
+    font-size: 15px;
+}
+
+form ul li{
+    padding: 4px 0;
+    border: none;
+    color: #666;
+    cursor: default;
+    background: transparent;
+}
+
+form ul li:hover{
+    background: transparent;
+}
+
+.cp-button{
+    padding: 14px 30px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@media (max-width:768px){
+
+    h2{
+        font-size: 28px;
+    }
+
+    form{
+        width:100%;
+    }
+
+    form input{
+        width:100%;
+        font-size:16px;
+    }
+
+    form ul{
+        font-size:14px;
+    }
+
+    .cp-button{
+        width:100%;
+        padding:15px;
+        font-size:16px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* base css */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f5f5f5;
+}
+
+.admin-layout{
+    display:flex;
+    min-height:100vh;
+}
+#sidebar{
+    width:260px;
+    background:#171a20;
+    color:white;
+    flex-shrink:0;
+    transition:.35s;
+}
+
+.logo{
+    padding:30px 25px;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo h2{
+    margin-bottom:5px;
+}
+
+.logo p{
+    color:#aaa;
+    font-size:14px;
+}
+
+nav{
+    display:flex;
+    flex-direction:column;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:18px 25px;
+    transition:.3s;
+}
+
+nav a:hover{
+    background:#232832;
+}
+
+nav i{
+    width:30px;
+}
+.content{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+}
+
+header{
+    height:70px;
+    background:#171a20;
+    color:white;
+    display:flex;
+    align-items:center;
+    padding:0 25px;
+    gap:20px;
+}
+
+header h1{
+    font-size:30px;
+}
+
+main{
+    padding:30px;
+}
+
+#menu-btn{
+    display:none;
+    background:none;
+    border:none;
+    color:white;
+    font-size:28px;
+    cursor:pointer;
+}
+#overlay{
+    display:none;
+}
+
+@media(max-width:768px){
+
+#sidebar{
+    position:fixed;
+    top:0;
+    left:-260px;
+    width:260px;
+    height:100%;
+    z-index:1000;
+}
+
+#sidebar.active{
+    left:0;
+}
+
+#menu-btn{
+    display:block;
+}
+
+header{
+    padding:0 20px;
+}
+
+header h1{
+    font-size:24px;
+}
+
+main{
+    padding:20px;
+}
+
+#overlay.active{
+    display:block;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    z-index:999;
+}
+
+}
+
+
+
+
+/* celebrity event add and edit css */
+.edit-card{
+    background-color: #fff;
+    width: 100%;
+    padding: 30px;
+    max-width: 900px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
+    box-sizing: border-box;
+    margin: 20px auto;
+}
+.edit-card h2{
+    margin-bottom: 8px;
+    font-size: 28px;
+}
+.edit-subtitle{
+    color: #777;
+    margin-bottom: 28px;
+}
+.photo-section{
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+.photo-section p,
+label{
+    font-weight: 600;
+}
+.edit-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.form-group{
+    display: flex;
+    flex-direction: column;
+}
+.form-group label{
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+.form-group input{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d5d5d5;
+    border-radius: 8px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+.form-group input:focus{
+    outline: none;
+    border-color: #2563eb;
+}
+.edit-actions{
+    margin-top: 25px;
+    display: flex;
+    gap: 10px;
+}
+.update-button,
+.cancel-button{
+    background-color: #2563eb;
+    color: white;
+    padding: 12px 22px;
+    border: #2563eb;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+@media (max-width:768px){
+
+    .edit-card{
+        width:100%;
+        padding:20px;
+        margin:15px auto;
+        border-radius:12px;
+    }
+
+    .edit-card h2{
+        font-size:28px;
+    }
+
+    .photo-section{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:20px;
+    }
+
+    .photo-section img{
+        width:90px;
+        height:90px;
+        object-fit:cover;
+        border-radius:50%;
+    }
+
+    .edit-grid{
+        grid-template-columns:1fr;
+        gap:18px;
+    }
+
+    .form-group input,
+    .form-group textarea{
+        width:100%;
+        font-size:16px;
+        padding:12px;
+        box-sizing:border-box;
+    }
+
+    .form-group textarea{
+        min-height:120px;
+        resize:vertical;
+    }
+
+    .edit-actions{
+        flex-direction:column;
+    }
+
+    .update-button,
+    .cancel-button{
+        width:100%;
+        padding:14px;
+        font-size:16px;
+    }
+
+    .change-photo input{
+        width:100%;
+    }
+}
+
+
+
+
+/* celebrities and packages page */
+.page-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.add-button{
+    background-color: #2563eb;
+    color: white;
+    padding: 10px 16px;
+    text-decoration: none;
+    border: 1px solid #2563eb;
+    cursor: pointer;
+    border-radius: 6px;
+}
+.table-container{
+    width: 100%;
+    overflow-x: auto;
+    background-color: white;
+  
+    border-radius: 5px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
+}
+.admin-table{
+    width: 100%;
+    border-collapse: collapse;
+    padding: 30px;
+}
+.admin-table th,
+.admin-table td{
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+.admin-table th{
+    background-color: #f5f5f5;
+}
+.edit-button,
+.delete-button{
+    padding: 6px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-right: 5px;
+    cursor: pointer;
+}
+.edit-button{
+    background-color: #2563eb;
+    color: white;
+    border: #2563eb;
+}
+.delete-button{
+    background: #dc2626;
+    color: white;
+    border: #dc2626;
+}
+.image{
+    width: 80px;
+    border-radius: 50%;
+}
+.form-group textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d5d5d5;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+.form-group textarea:focus{
+    outline: none;
+    border-color: #2563eb;
+}
+
+@media (max-width:768px){
+
+    .page-header{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .page-header h2{
+        font-size:30px;
+        margin:0;
+    }
+
+    .add-button{
+        width:100%;
+        padding:12px;
+        font-size:16px;
+    }
+
+    .admin-table th,
+    .admin-table td{
+        padding:10px;
+        font-size:14px;
+    }
+
+    .image{
+        width:55px;
+        height:55px;
+    }
+}
+
+
+
+
+
+
+
+
+/* add package css */
+.package-container{
+    background-color: white;
+    padding: 30px;
+    max-width: 900PX;
+    margin: auto;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
+}
+.package-container h2{
+    margin-bottom: 8px;
+    font-size: 28px;
+}
+.add-package-grid{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 20px;
+}
+.package-form-group{
+    display: flex;
+    flex-direction: column;
+}
+.package-form-group label{
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+.package-form-group input{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d5d5d5;
+    border-radius: 8px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+.package-form-group input:focus{
+    outline: none;
+    border-color: #2563eb;
+}
+.package-form-group select{
+    padding: 12px;
+    border: 1px solid #d5d5d5;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+.package-form-group select:focus{
+    border-color: #2563eb;
+}
+.package-form-group textarea{
+    padding: 12px;
+    border: 1px solid #d5d5d5;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+.package-form-group textarea:hover{
+    border-color: #2563eb;
+}
+.package-update-button{
+    background-color: #2563eb;
+    color: white;
+    padding: 12px 22px;
+    border: #2563eb;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 25px;
+}
+
+@media (max-width:768px){
+
+    .package-container{
+        padding:20px;
+        margin:0;
+    }
+
+    .package-container h2{
+        font-size:30px;
+        text-align:center;
+        margin-bottom:25px;
+    }
+
+    .photo-section{
+        display:flex;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:20px;
+    }
+
+    .current-photo img{
+        width:90px;
+        height:90px;
+        object-fit:cover;
+        border-radius:10px;
+    }
+
+    .change-photo{
+        width:100%;
+    }
+
+    .change-photo input{
+        width:100%;
+    }
+
+    .add-package-grid{
+        display:grid;
+        grid-template-columns:1fr;
+        gap:18px;
+    }
+
+    .package-form-group{
+        width:100%;
+    }
+
+    .package-form-group p{
+        margin-bottom:8px;
+        font-size:17px;
+        font-weight:600;
+    }
+
+    .package-form-group input,
+    .package-form-group select,
+    .package-form-group textarea{
+        width:100%;
+        box-sizing:border-box;
+        font-size:16px;
+    }
+
+    .package-form-group textarea{
+        min-height:120px;
+        resize:vertical;
+    }
+
+    .package-update-button{
+        width:100%;
+        margin-top:20px;
+        padding:15px;
+        font-size:16px;
+    }
+}
+
+
+
+
+/* packages page */
+.page-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.add-button{
+    background:#2563eb;
+    color:#fff;
+    padding:10px 16px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+.table-container{
+    width:100%;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    background:#fff;
+    border-radius:8px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+.admin-table{
+    width:100%;
+    min-width:900px;   /* Keeps all columns */
+    border-collapse:collapse;
+}
+.admin-table th,
+.admin-table td{
+    padding:12px;
+    border-bottom:1px solid #ddd;
+    text-align:left;
+    white-space:nowrap;
+}
+.admin-table th{
+    background:#f5f5f5;
+}
+.image{
+    width:70px;
+    height:70px;
+    object-fit:cover;
+    border-radius:50%;
+}
+.edit-button,
+.delete-button{
+    padding:6px 12px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+.edit-button{
+    background:#2563eb;
+    color:#fff;
+}
+.delete-button{
+    background:#dc2626;
+    color:#fff;
+}
+
+
+
+/* settings */
+form{
+    max-width: 700px;
+    width: 100%;
+}
+
+.link-label{
+    display:block;
+    font-size:24px;
+    font-weight:600;
+    margin-bottom:8px;
+}
+
+.link-input{
+    width:100%;
+    height:48px;
+    padding:0 15px;
+    border:1px solid #ccc;
+    border-radius:25px;
+    font-size:17px;
+    margin-bottom:25px;
+    box-sizing:border-box;
+}
+
+.link-button{
+    background:#2563eb;
+    color:#fff;
+    border:none;
+    border-radius:12px;
+    padding:14px 30px;
+    font-size:17px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.link-button:hover{
+    background:#1d4ed8;
+}
+
+@media (max-width:768px){
+
+    form{
+        width:100%;
+    }
+
+    .link-label{
+        font-size:20px;
+    }
+
+    .link-input{
+        width:100%;
+        font-size:16px;
+    }
+
+    .link-button{
+        width:100%;
+        padding:15px;
+    }
+
+}
+
+
+
+
+
+

@@ -1,0 +1,203 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+    <title>Packages</title>
+</head>
+<body class="package-body">
+    <header class="topbar">
+
+        <marquee direction="left" loop="infinite" scrollamount="6" scrolldelay=""1>
+            <span class="marquee-title">The {{ celebrity.name }} VIP Experience</span>
+            <span class="marquee-subtitle">The {{ celebrity.name }} VIP Experience</span>
+            <span class="marquee-title">The {{ celebrity.name }} VIP Experience</span>
+            <span class="marquee-subtitle">The {{ celebrity.name }} VIP Experience</span>
+            <span class="marquee-title">>The {{ celebrity.name }} VIP Experience</span>
+            <span class="marquee-subtitle">The {{ celebrity.name }} VIP Experience</span>
+        </marquee>
+
+    </header>
+
+    <section class="meet">
+        <h2>Meet {{ celebrity.name }} "LIVE". Be part of this Experience</h2>
+        <h5>With Exclusive VIP packages avaliable. From a quick photo to the ultimate platinum experience</h5>
+        <p>Selling fast . Limited availability . No upgrades at the event.</p>
+    </section>
+
+    <section class="package-grid">
+
+        {% for package in packages %}
+
+            <div class="package-card">
+                
+                <!-- Photo -->
+                {% if celebrity.photo %}
+                    <img
+                        src="{{ package.photo.url }}"
+                        alt="{{ package.name }}"
+                        class="package-photo"
+                    >
+                {% endif %}
+
+                <!-- Package Name -->
+                {% if package.package_name %}
+                    <h2 class="name"> {{ package.package_name }} </h2>
+                {% endif %}
+
+                <div class="action">
+                    <a href="{% url 'package_detail' package.id %}"><button>Select</button></a>
+                </div>
+
+
+                <!-- Price -->
+                 <!-- {% if package.price %}
+                    <p class="price"> ${{ package.price }} </p>
+                {% endif %} -->
+
+
+                <!-- Quantity
+                 <div class="click">
+                    <div class="quantity-box">
+
+                        <button class="minus" type="button">−</button>
+
+                        <span class="quantity">0</span>
+
+                        <button class="plus" type="button">+</button>
+
+                    </div> -->
+
+                <!-- </div> -->
+
+            </div>    
+
+        {% empty %}
+
+                <div class="empty-message">
+                    <p>No packages available yet.</p>
+                </div>
+
+        {% endfor %}
+
+    </section>
+
+    <!-- ========TERMS========== -->
+    <section class="terms">
+        <P>Important Info:</P>
+        <ul>
+            <li>Limited availability | One VIP per ticket holder</li>
+            <li>ALL SALES FINAL. NO REFUNDS OR EXCAHNGES</li>
+            <li>VIP experience are non-transferable</li>
+            <li>Late arrival or missed check-in forfeits the experience without refund</li>
+        </ul>
+    </section>
+
+    <footer>
+
+        <div class="payment-icons">
+
+            <div class="amazon">
+                <i class="fa-brands fa-amazon-pay"></i>
+            </div>
+
+            <div class="amex">
+                <i class="fa-brands fa-cc-amex"></i>
+            </div>
+
+            <div class="applepay">
+                <i class="fa-brands fa-apple-pay"></i>
+            </div>
+
+            <div class="discover">
+                <i class="fa-brands fa-cc-discover"></i>
+            </div>
+
+            <div class="googlepay">
+                <i class="fa-brands fa-google-pay"></i>
+            </div>
+
+            <div class="mastercard">
+                <i class="fa-brands fa-cc-mastercard"></i>
+            </div>
+
+            <div class="paypal">
+                <i class="fa-brands fa-cc-paypal"></i>
+            </div>
+
+            <div class="payment-card">
+                <i class="fa-brands fa-cc-visa"></i>
+            </div>
+
+        </div>
+
+            <p>&copy; Meet Me. All Rights Reserved.</p>
+        </div>
+
+        <div>
+            <p>Terms and Policies</p>
+        </div>
+
+        <div class="socials">
+            <p>FOLLOW</p>
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+        </div>
+
+    </footer>
+</body>
+</html>
+
+<script>
+
+document.querySelectorAll(".package-card").forEach(function(card){
+
+    let quantity = 0;
+
+    const number = card.querySelector(".quantity");
+    const plus = card.querySelector(".plus");
+    const minus = card.querySelector(".minus");
+    const button = card.querySelector(".book-btn");
+
+    function updateButton(){
+
+        number.textContent = quantity;
+
+        if(quantity > 0){
+            button.classList.remove("disabled");
+        }else{
+            button.classList.add("disabled");
+        }
+
+    }
+
+    plus.addEventListener("click", function(){
+
+        quantity++;
+        updateButton();
+
+    });
+
+    minus.addEventListener("click", function(){
+
+        if(quantity > 0){
+            quantity--;
+            updateButton();
+        }
+
+    });
+
+    updateButton();
+
+});
+</script>

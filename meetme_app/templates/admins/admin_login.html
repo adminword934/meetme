@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="{% static 'admins/css/style.css' %}">
+</head>
+<body class="admin-body">
+    <section class="container">
+        <div class="top">
+            Admin Login
+        </div>
+
+        <div class="content">
+            <form method="POST" class="form">
+                
+                {% csrf_token %}
+
+                <label class="admin-label">Username</label>
+                <input class="admin-input" type="text" name="username" required>
+
+                <label class="admin-label">Password</label>
+                <input class="admin-input" type="password" name="password" required>
+
+                {% if error %}
+                    <p class="errors">{{ error }}</p>
+                {% endif %}
+
+                <div class="btn">
+                    <button class="admin-button" type="submit">Log in</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

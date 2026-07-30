@@ -1,0 +1,91 @@
+[
+{
+    "model": "meetme_app.celebrity",
+    "pk": 3,
+    "fields": {
+        "photo": "celebrities/Bad_bunny.jpg",
+        "name": "Bad Bunny",
+        "free_text": "",
+        "venue": "LONDON, arena",
+        "date": "2026-07-31",
+        "time": "10:20:00"
+    }
+},
+{
+    "model": "meetme_app.celebrity",
+    "pk": 4,
+    "fields": {
+        "photo": "celebrities/justtin.jpg",
+        "name": "Justin Beiber",
+        "free_text": "",
+        "venue": "",
+        "date": "2026-07-25",
+        "time": "11:16:00"
+    }
+},
+{
+    "model": "meetme_app.celebrity",
+    "pk": 5,
+    "fields": {
+        "photo": "celebrities/keith_sweat.jpg",
+        "name": "Keith Sweat",
+        "free_text": "",
+        "venue": "afghanistan",
+        "date": "2026-07-26",
+        "time": "10:25:00"
+    }
+},
+{
+    "model": "meetme_app.celebrity",
+    "pk": 6,
+    "fields": {
+        "photo": "celebrities/Postmalone.jpg",
+        "name": "Post Malone",
+        "free_text": "",
+        "venue": "london",
+        "date": "2026-07-26",
+        "time": "08:11:00"
+    }
+},
+{
+    "model": "meetme_app.package",
+    "pk": 4,
+    "fields": {
+        "celebrity": 3,
+        "package_name": "Bon Fire",
+        "photo": "packages/bonfire.jpg",
+        "price": "2000.00",
+        "benefits": ""
+    }
+},
+{
+    "model": "meetme_app.package",
+    "pk": 5,
+    "fields": {
+        "celebrity": 3,
+        "package_name": "Private Dinner",
+        "photo": "packages/privatedinner.jpg",
+        "price": "800.00",
+        "benefits": ""
+    }
+},
+{
+    "model": "meetme_app.package",
+    "pk": 6,
+    "fields": {
+        "celebrity": 3,
+        "package_name": "Meet & Greet",
+        "photo": "packages/meetandgreet.jpg",
+        "price": "1100.00",
+        "benefits": ""
+    }
+},
+{
+    "model": "meetme_app.websitesettings",
+    "pk": 1,
+    "fields": {
+        "support_link": "https://t.me/emilyloramanagement",
+        "support_text": "Support"
+    }
+}
+]

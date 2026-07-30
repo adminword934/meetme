@@ -1,0 +1,54 @@
+{% extends "admins/base.html" %}
+{% block content %}
+
+<div class="edit-card">
+    <h2>Add Celebrity</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="photo-section">
+            <p>Photo</p>
+            <input type="file" name="photo">
+            <br>
+        </div>
+        <p class="edit-subtitle">Create the Celebrities Event</p>
+
+        <div class="edit-grid">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" name="name"
+                oninvalid="this.setCustomValidity('Name is required')" 
+                oninput="this.setCustomValidity('')">
+                <br>
+            </div>
+
+            <div class="form-group">
+                <label>Free text</label>
+                <textarea name="free_text"></textarea>
+                <br>
+            </div>
+
+            <div class="form-group">
+                <label>Venue</label>
+                <input type="text" name="venue">
+                <br>
+            </div>
+
+            <div class="form-group">
+                <label>Date</label>
+                <input type="date" name="date">
+                <br>
+            </div>
+
+            <div class="form-group">
+                <label>Time</label>
+                <input type="time" name="time">
+                <br>
+            </div>
+        </div>
+        
+        <div class="edit-actions">
+        <button class="update-button">Save</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

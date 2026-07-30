@@ -1,0 +1,198 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet me & Greet</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+</head>
+<body>
+    
+    <!-- ==============NAVBAR============= -->
+    <header class="navbar">
+
+        <div class="logo">
+            <h2>MEET ME</h2>
+            <span>& GREET</span>
+        </div>
+
+        <div class="menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <nav id="mobileMenu">
+            <a href="#">HOME</a>
+            <a href="#">FAQ</a>
+            <a href="#">CONTACT</a>
+            <a href="#" class="ticket-button">GET TICKETS</a>
+        </nav>
+
+    </header>
+
+    <!-- ================HERO============= -->
+    <section class="hero">
+
+        <div class="hero-image">
+            <img src="{% static 'images/heros.jpg' %}" alt="Photo">
+        </div>
+
+        <div class="hero-text">
+            <h1>MEET YOUR <br>
+                FAVORITES
+            </h1>
+
+            <P>Bring you up close with your favorite celebrities</P>
+            <p>Create unforgettable experiences with VIP events</p>
+        </div>
+
+    </section>
+
+
+
+    <!-- =================event=========== -->
+    <section class="event-grid">
+        
+        {% for celebrity in celebrities %}
+
+            <div class="event-card">
+
+                <!-- Photo -->
+                {% if celebrity.photo %}
+                    <img
+                        src="{{ celebrity.photo.url }}"
+                        alt="{{ celebrity.name }}"
+                        class="celebrity-photo"
+                    >
+                {% endif %}
+
+
+                <!-- Name -->
+                {% if celebrity.name %}
+                    <h2>{{ celebrity.name }}</h2>
+                {% endif %}
+
+
+                <!-- free text -->
+                {% if celebrity.free_text %}
+                    <div class="event-info">
+                        <div class="free-text">
+                            <p>{{ celebrity.free_text|linebreaksbr }}</p>
+                        </div>
+                    </div>
+                {% endif %}
+
+
+                <!-- Actions -->
+                <div class="card-actions">
+
+                    <a href="{% url 'celebrity_packages' celebrity.id %}"><button>GET VIP ACCESS</button></a>
+
+                </div>
+
+            </div>
+
+        {% empty %}
+
+            <div class="empty-message">
+                <p>No celebrity events have been added yet.</p>
+            </div>
+
+        {% endfor %}
+
+    </section>
+
+    <!-- ===========EXPERIENCES========= -->
+    <section class="exp">
+
+        <h2>EXPERIENCES</h2>
+
+        <div class="exp-list">
+
+
+            <ul>
+                <li>
+                    <i class="fa-solid fa-camera"></i>
+                    Meet your favorite celebrity
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-ticket"></i>
+                    VIP Entry
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-image"></i>
+                    Professional photos
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-pen"></i>
+                    Signed Merchandise
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-star"></i>
+                    Exclusive VIP package
+                </li>
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========footer======== -->
+    <footer>
+
+        <div class="socials">
+            <p>FOLLOW</p>
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-tiktok"></i>
+        </div>
+
+        <div>
+            <p>Have questions? Contact us</p>
+        </div>
+        
+        <div>
+            <p>&copy; Meet Me. All Rights Reserved.</p>
+        </div>
+
+    </footer>
+
+
+
+    <script>
+
+const menu = document.querySelector(".menu-toggle");
+const nav = document.getElementById("mobileMenu");
+const icon = menu.querySelector("i");
+
+menu.addEventListener("click", function(){
+
+    nav.classList.toggle("active");
+
+    if(nav.classList.contains("active")){
+        icon.classList.remove("fa-bars");
+        icon.classList.add("fa-xmark");
+    }else{
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
+    }
+
+});
+
+</script>
+</body>
+</html>

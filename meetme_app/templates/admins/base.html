@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{% static 'admins/css/style.css' %}">
+</head>
+<body>
+
+<div class="admin-layout">
+
+    <aside id="sidebar">
+
+        <div class="logo">
+            <h2>Admin</h2>
+            <p>Admin Panel</p>
+        </div>
+
+        <nav>
+
+            <a href="{% url 'website_settings' %}">
+                <i class="fa-solid fa-gear"></i>
+                Settings
+            </a>
+
+            <a href="{% url 'celebrities' %}">
+                <i class="fa-solid fa-calendar"></i>
+                Events
+            </a>
+
+            <a href="{% url 'packages' %}">
+                <i class="fa-solid fa-box"></i>
+                Packages
+            </a>
+
+            <a href="{% url 'change_password' %}">
+                <i class="fa-solid fa-lock"></i>
+                Change Password
+            </a>
+
+            <a href="{% url 'admin_logout' %}">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <div id="overlay"></div>
+
+    <div class="content">
+
+        <header>
+
+            <button id="menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <h1>Admin Dashboard</h1>
+
+        </header>
+
+        <main>
+
+            {% block content %}
+
+            {% endblock %}
+
+        </main>
+
+    </div>
+
+</div>
+
+<script>
+const sidebar = document.getElementById("sidebar");
+const overlay = document.getElementById("overlay");
+const button = document.getElementById("menu-btn");
+
+button.onclick = function(){
+
+    sidebar.classList.toggle("active");
+    overlay.classList.toggle("active");
+
+}
+
+overlay.onclick = function(){
+
+    sidebar.classList.remove("active");
+    overlay.classList.remove("active");
+
+}
+</script>
+
+</body>
+</html>

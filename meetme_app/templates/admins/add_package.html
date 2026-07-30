@@ -1,0 +1,53 @@
+{% extends "admins/base.html" %}
+{% block content %}
+
+    <div class="package-container">
+        <h2>Add Package</h2>
+    
+        <form method="POST" enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            <div class="photo-section">
+                <p>Photo</p>
+                <input type="file" name="photo">
+                <br>
+            </div>
+
+            <div class="add-package-grid">
+                <div class="package-form-group">
+                        <label>Celebrity</label>
+                        <select name="celebrity">
+
+                            {% for celebrity in celebrities %}
+                                <option value="{{ celebrity.id }}">
+                                    {{ celebrity.name }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                        <br>
+                    </div>
+
+                <div class="package-form-group">
+                    <label>Package Name</label>
+                    <input type="text" name="package_name">                        
+                    <br>
+                </div>
+
+                <div class="package-form-group">
+                    <label>Price</label>
+                    <input type="number" name="price">
+                    <br>                    
+                    </div>
+
+                <div class="package-form-group">
+                    <label>Benefits</label>
+                    <textarea name="benefits"></textarea>
+                    <br>
+                </div>
+            </div>
+
+            <button type="submit" class="save-button">Save</button>
+        </form>
+    </div>
+{% endblock %}
