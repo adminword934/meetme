@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary',
+    'cloudinary_storage',
     'meetme_app.apps.MeetmeAppConfig',
 ]
 
@@ -122,16 +124,9 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
-
-#storage
-
-STORAGES = {
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-    },
-}
 
 
 MEDIA_URL = "/media/"
@@ -139,8 +134,6 @@ MEDIA_ROOT = BASE_DIR / "media"
 LOGIN_URL = "admin_login"
 LOGIN_REDIRECT_URL = "website_settings"
 LOGOUT_REDIRECT_URL = "admin_login"
-
-
 
 
 
