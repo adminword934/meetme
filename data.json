@@ -1,0 +1,779 @@
+[
+{
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "app_label": "admin",
+        "model": "logentry"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "app_label": "auth",
+        "model": "group"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "app_label": "auth",
+        "model": "permission"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "app_label": "auth",
+        "model": "user"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "app_label": "contenttypes",
+        "model": "contenttype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "app_label": "sessions",
+        "model": "session"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "app_label": "meetme_app",
+        "model": "celebrity"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "app_label": "meetme_app",
+        "model": "package"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "app_label": "meetme_app",
+        "model": "websitesettings"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "app_label": "axes",
+        "model": "accessattempt"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "app_label": "axes",
+        "model": "accessattemptexpiration"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "app_label": "axes",
+        "model": "accessfailurelog"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "app_label": "axes",
+        "model": "accesslog"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "aizvi5p8yyuq8ivfuz0j9nb040r6lwm9",
+    "fields": {
+        "session_data": ".eJxVjEEOgjAQRe_StWnKTMHi0j1nIDOdqaCmTSisjHdXEha6_e-9_zIjbes0blWXcRZzMY05_W5M8aF5B3KnfCs2lrwuM9tdsQetdiiiz-vh_h1MVKdv3WMPDK51Xdt6IQQXAgiTRwioHpjUCWLyqYMgoKE5B44ao6OUkNG8P7upN70:1wpPMl:Z5Dwzvknl2BDSzOQuPt2qzjlDQDgNI2RZLdBZDrAhXw",
+        "expire_date": "2026-07-30T12:25:59.217Z"
+    }
+},
+{
+    "model": "meetme_app.celebrity",
+    "pk": 3,
+    "fields": {
+        "photo": "celebrities/Bad_bunny.jpg",
+        "name": "Bad Bunny",
+        "free_text": "",
+        "venue": "LONDON, arena",
+        "date": "2026-07-31",
+        "time": "10:20:00"
+    }
+},
+{
+    "model": "meetme_app.celebrity",
+    "pk": 4,
+    "fields": {
+        "photo": "celebrities/justtin.jpg",
+        "name": "Justin Beiber",
+        "free_text": "",
+        "venue": "",
+        "date": "2026-07-25",
+        "time": "11:16:00"
+    }
+},
+{
+    "model": "meetme_app.celebrity",
+    "pk": 5,
+    "fields": {
+        "photo": "celebrities/keith_sweat.jpg",
+        "name": "Keith Sweat",
+        "free_text": "",
+        "venue": "afghanistan",
+        "date": "2026-07-26",
+        "time": "10:25:00"
+    }
+},
+{
+    "model": "meetme_app.celebrity",
+    "pk": 6,
+    "fields": {
+        "photo": "celebrities/Postmalone.jpg",
+        "name": "Post Malone",
+        "free_text": "",
+        "venue": "london",
+        "date": "2026-07-26",
+        "time": "08:11:00"
+    }
+},
+{
+    "model": "meetme_app.package",
+    "pk": 4,
+    "fields": {
+        "celebrity": 3,
+        "package_name": "Bon Fire",
+        "photo": "packages/bonfire.jpg",
+        "price": "2000.00",
+        "benefits": ""
+    }
+},
+{
+    "model": "meetme_app.package",
+    "pk": 5,
+    "fields": {
+        "celebrity": 3,
+        "package_name": "Private Dinner",
+        "photo": "packages/privatedinner.jpg",
+        "price": "800.00",
+        "benefits": ""
+    }
+},
+{
+    "model": "meetme_app.package",
+    "pk": 6,
+    "fields": {
+        "celebrity": 3,
+        "package_name": "Meet & Greet",
+        "photo": "packages/meetandgreet.jpg",
+        "price": "1100.00",
+        "benefits": ""
+    }
+},
+{
+    "model": "meetme_app.websitesettings",
+    "pk": 1,
+    "fields": {
+        "support_link": "https://t.me/emilyloramanagement",
+        "support_text": "Support"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add log entry",
+        "content_type": [
+            "admin",
+            "logentry"
+        ],
+        "codename": "add_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change log entry",
+        "content_type": [
+            "admin",
+            "logentry"
+        ],
+        "codename": "change_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete log entry",
+        "content_type": [
+            "admin",
+            "logentry"
+        ],
+        "codename": "delete_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view log entry",
+        "content_type": [
+            "admin",
+            "logentry"
+        ],
+        "codename": "view_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add permission",
+        "content_type": [
+            "auth",
+            "permission"
+        ],
+        "codename": "add_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change permission",
+        "content_type": [
+            "auth",
+            "permission"
+        ],
+        "codename": "change_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": [
+            "auth",
+            "permission"
+        ],
+        "codename": "delete_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view permission",
+        "content_type": [
+            "auth",
+            "permission"
+        ],
+        "codename": "view_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add group",
+        "content_type": [
+            "auth",
+            "group"
+        ],
+        "codename": "add_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change group",
+        "content_type": [
+            "auth",
+            "group"
+        ],
+        "codename": "change_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete group",
+        "content_type": [
+            "auth",
+            "group"
+        ],
+        "codename": "delete_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view group",
+        "content_type": [
+            "auth",
+            "group"
+        ],
+        "codename": "view_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add user",
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "codename": "add_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change user",
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "codename": "change_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete user",
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "codename": "delete_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view user",
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "codename": "view_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add content type",
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ],
+        "codename": "add_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change content type",
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ],
+        "codename": "change_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete content type",
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ],
+        "codename": "delete_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view content type",
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ],
+        "codename": "view_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add session",
+        "content_type": [
+            "sessions",
+            "session"
+        ],
+        "codename": "add_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change session",
+        "content_type": [
+            "sessions",
+            "session"
+        ],
+        "codename": "change_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete session",
+        "content_type": [
+            "sessions",
+            "session"
+        ],
+        "codename": "delete_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view session",
+        "content_type": [
+            "sessions",
+            "session"
+        ],
+        "codename": "view_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add celebrity",
+        "content_type": [
+            "meetme_app",
+            "celebrity"
+        ],
+        "codename": "add_celebrity"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change celebrity",
+        "content_type": [
+            "meetme_app",
+            "celebrity"
+        ],
+        "codename": "change_celebrity"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete celebrity",
+        "content_type": [
+            "meetme_app",
+            "celebrity"
+        ],
+        "codename": "delete_celebrity"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view celebrity",
+        "content_type": [
+            "meetme_app",
+            "celebrity"
+        ],
+        "codename": "view_celebrity"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add package",
+        "content_type": [
+            "meetme_app",
+            "package"
+        ],
+        "codename": "add_package"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change package",
+        "content_type": [
+            "meetme_app",
+            "package"
+        ],
+        "codename": "change_package"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete package",
+        "content_type": [
+            "meetme_app",
+            "package"
+        ],
+        "codename": "delete_package"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view package",
+        "content_type": [
+            "meetme_app",
+            "package"
+        ],
+        "codename": "view_package"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add website settings",
+        "content_type": [
+            "meetme_app",
+            "websitesettings"
+        ],
+        "codename": "add_websitesettings"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change website settings",
+        "content_type": [
+            "meetme_app",
+            "websitesettings"
+        ],
+        "codename": "change_websitesettings"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete website settings",
+        "content_type": [
+            "meetme_app",
+            "websitesettings"
+        ],
+        "codename": "delete_websitesettings"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view website settings",
+        "content_type": [
+            "meetme_app",
+            "websitesettings"
+        ],
+        "codename": "view_websitesettings"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add access attempt",
+        "content_type": [
+            "axes",
+            "accessattempt"
+        ],
+        "codename": "add_accessattempt"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change access attempt",
+        "content_type": [
+            "axes",
+            "accessattempt"
+        ],
+        "codename": "change_accessattempt"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete access attempt",
+        "content_type": [
+            "axes",
+            "accessattempt"
+        ],
+        "codename": "delete_accessattempt"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view access attempt",
+        "content_type": [
+            "axes",
+            "accessattempt"
+        ],
+        "codename": "view_accessattempt"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add access log",
+        "content_type": [
+            "axes",
+            "accesslog"
+        ],
+        "codename": "add_accesslog"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change access log",
+        "content_type": [
+            "axes",
+            "accesslog"
+        ],
+        "codename": "change_accesslog"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete access log",
+        "content_type": [
+            "axes",
+            "accesslog"
+        ],
+        "codename": "delete_accesslog"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view access log",
+        "content_type": [
+            "axes",
+            "accesslog"
+        ],
+        "codename": "view_accesslog"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add access failure",
+        "content_type": [
+            "axes",
+            "accessfailurelog"
+        ],
+        "codename": "add_accessfailurelog"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change access failure",
+        "content_type": [
+            "axes",
+            "accessfailurelog"
+        ],
+        "codename": "change_accessfailurelog"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete access failure",
+        "content_type": [
+            "axes",
+            "accessfailurelog"
+        ],
+        "codename": "delete_accessfailurelog"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view access failure",
+        "content_type": [
+            "axes",
+            "accessfailurelog"
+        ],
+        "codename": "view_accessfailurelog"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add access attempt expiration",
+        "content_type": [
+            "axes",
+            "accessattemptexpiration"
+        ],
+        "codename": "add_accessattemptexpiration"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change access attempt expiration",
+        "content_type": [
+            "axes",
+            "accessattemptexpiration"
+        ],
+        "codename": "change_accessattemptexpiration"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete access attempt expiration",
+        "content_type": [
+            "axes",
+            "accessattemptexpiration"
+        ],
+        "codename": "delete_accessattemptexpiration"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view access attempt expiration",
+        "content_type": [
+            "axes",
+            "accessattemptexpiration"
+        ],
+        "codename": "view_accessattemptexpiration"
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$liKejoQkjGPK5ZcCCm03Ka$z5qiNe8nl+JKyar9JkjNFP2VdXe5B0dsUoYG36HZgjE=",
+        "last_login": "2026-07-30T00:30:54.832Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2026-07-29T13:38:25.614Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]
