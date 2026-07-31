@@ -14,6 +14,7 @@ from pathlib import Path
 from decouple import config
 import dj_database_url
 import os
+import cloudinary
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,6 +32,16 @@ DEBUG = config("DEBUG", cast=bool)
 ALLOWED_HOSTS = ["*"]
 
 
+#cloudinary
+
+cloudinary.config(
+    cloud_name=os.environ.get("CLOUDINARY_CLOUD_NAME"),
+    api_key=os.environ.get("CLOUDINARY_API_KEY"),
+    api_secret=os.environ.get("CLOUDINARY_API_SECRET"),
+)
+
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -40,6 +51,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary',
+    'cloudinary_storage',
     'meetme_app.apps.MeetmeAppConfig',
 ]
 
@@ -130,6 +143,12 @@ LOGIN_URL = "admin_login"
 LOGIN_REDIRECT_URL = "website_settings"
 LOGOUT_REDIRECT_URL = "admin_login"
 
+
+
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
+
+
+
 SESSION_COOKIE_AGE = 1800
 SESSION_SAVE_EVERY_REQUEST = True
 
@@ -141,6 +160,8 @@ SECURE_CONTENT_TYPE_NOSNIFF = True
 X_FRAME_OPTIONS = "DENY"
 
 CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+SECURE_PTOXY_SSL_HEADER = ("HTTP_X_FOWARDED_PHOTO", "https")
 
 SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
 
