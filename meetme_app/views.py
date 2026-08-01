@@ -91,7 +91,7 @@ def add_celebrity(request):
     if request.method =="POST":
         name = request.POST.get("name")
         venue = request.POST.get("venue")
-        photo = request.FILES.get("c_photo")
+        photo = request.FILES.get("photo")
         free_text = request.POST.get("free_text")
         date = request.POST.get("date")
         time = request.POST.get("time")
