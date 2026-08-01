@@ -93,8 +93,8 @@ def add_celebrity(request):
         venue = request.POST.get("venue")
         photo = request.FILES.get("photo")
         free_text = request.POST.get("free_text")
-        date = request.POST.get("date")
-        time = request.POST.get("time")
+        date = request.POST.get("date") or None
+        time = request.POST.get("time") or None
         Celebrity.objects.create(
             name=name,
             venue=venue,
