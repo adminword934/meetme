@@ -114,8 +114,8 @@ def edit_celebrity(request, id):
         celebrity.name = request.POST.get("name")
         celebrity.venue = request.POST.get("venue")
         celebrity.free_text = request.POST.get("free_text")
-        celebrity.date = request.POST.get("date")
-        celebrity.time = request.POST.get("time")
+        celebrity.date = request.POST.get("date") or None
+        celebrity.time = request.POST.get("time") or None
 
         if request.FILES.get("photo"):
             celebrity.photo = request.FILES.get("c_photo")
