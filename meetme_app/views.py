@@ -118,7 +118,7 @@ def edit_celebrity(request, id):
         celebrity.time = request.POST.get("time") or None
 
         if request.FILES.get("photo"):
-            celebrity.photo = request.FILES.get("c_photo")
+            celebrity.photo = request.FILES.get("photo")
 
         celebrity.save()
 
