@@ -32,7 +32,6 @@ ALLOWED_HOSTS = [
     "localhost",
     "meetmee.online",
     "www.meetmee.online",
-    "meetme-2m33.onrender.com"
 ]
 
 
