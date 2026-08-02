@@ -27,9 +27,19 @@ SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DEBUG", cast=bool)
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [
+    "127.0.0.1",
+    "localhost"
+    "meetmee.online",
+    "www.meetmee.online",
+    "meetme-2m33.onrender.com"
+]
 
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://meetmee.online"
+    "https://www.meetmee.online"
+]
 
 #cloudinary
 CLOUDINARY_STORAGE = {
