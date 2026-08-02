@@ -29,7 +29,7 @@ DEBUG = config("DEBUG", cast=bool)
 
 ALLOWED_HOSTS = [
     "127.0.0.1",
-    "localhost"
+    "localhost",
     "meetmee.online",
     "www.meetmee.online",
     "meetme-2m33.onrender.com"
@@ -179,7 +179,7 @@ X_FRAME_OPTIONS = "DENY"
 
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
-SECURE_PTOXY_SSL_HEADER = ("HTTP_X_FOWARDED_PHOTO", "https")
+SECURE_PTOXY_SSL_HEADER = ("HTTP_X_FOWARDED_PROTO", "https")
 
 SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
 
