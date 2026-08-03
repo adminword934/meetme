@@ -79,6 +79,7 @@ def admin_logout(request):
     
 #     return render(request, "dashboard/dashboard.html", context)
 
+@login_required
 def celebrities(request):
     celebrities = Celebrity.objects.all()
 
@@ -87,6 +88,7 @@ def celebrities(request):
     }
     return render(request, "admins/celebrities.html", context)
 
+@login_required
 def add_celebrity(request):
     if request.method =="POST":
         name = request.POST.get("name")
@@ -106,6 +108,7 @@ def add_celebrity(request):
         return redirect("celebrities")
     return render(request, "admins/add_celebrity.html")
 
+@login_required
 def edit_celebrity(request, id):
 
     celebrity = get_object_or_404(Celebrity, id=id)
@@ -134,6 +137,7 @@ def delete_celebrity(request, id):
     celebrity.delete()
     return redirect("celebrities")
 
+@login_required
 def packages(request):
     packages = Package.objects.all()
 
